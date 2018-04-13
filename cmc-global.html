@@ -19,9 +19,9 @@
     	</ul>
     </div>
 	<div class="wrap-header">
-			<h1>
-            <a href="/" id="title"></a>
-			</h1>
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
@@ -187,189 +187,7 @@ MIT
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p>1、项目下READEME.MD</p>
 
-<p>=======CMC======</p>
-
-<p>【配置环境，启动项目步骤】</p>
-
-<h4 id="1nodejs">1 先下载NodeJs</h4>
-
-<h4 id="2nodejscmd">2 安装NodeJs，安装完成后，进入cmd窗口</h4>
-
-<p>npm -v 输出版本 2.15.1 表示安装成功
- 进入项目目录
- d: 进入d盘
- cd D:\work2\git\coupon\coupon-marketing-center\cmc-web 进入项目目录
- D:\work2\git2\coupon\coupon-marketing-center\cmc-web
- npm install 为这个项目安装jar包，安装成功后，在web文件夹中生成新文件夹node<em>modules文件夹
- node</em>modules 这个文件夹包含各种jar</p>
-
-<h4 id="3nginx1101conf">3 打开nginx-1.10.1 安装目录，进入conf文件夹</h4>
-
-<p>修改nginx.conf 文件
- 将server中的root配置修改为： D:/work2/git/coupon/coupon-marketing-center/cmc-web/dist/;
- D:/work2/git2/coupon/coupon-marketing-center/cmc-web/dist/;</p>
-
-<h4 id="4npmrunbuildweb">4 npm run build 编译打包项目，只要web改动，就执行该命令</h4>
-
-<h4 id="5tomcatsoacmcsoawebwarexploded">5 配置tomcat , soa层： cmc-soa-web:war exploded</h4>
-
-<h4 id="6soa">6 编译运行也是soa层</h4>
-
-<p>此项目使用的是java 1.7 版本
- 第一次编译项目需要整个项目进行编译，否则有红色报错</p>
-
-<h4 id="7nginxnginxexe2nginx">7 启动nginx-- 双击 nginx.exe 查看任务管理器，可以看到2个nginx进程，表示启动成功</h4>
-
-<p>启动nginx 
- 1 双击nginx.exe
- 2 进入nginx安装目录 cd D:\nginx-1.10.1 ,输入命令 nginx
- 停止nginx
- 1 打开任务管理器，找到nginx进程，右击选择：结束进程(有2个nginx进程)
- 2 进入nginx安装目录 cd D:\nginx-1.10.1 ,输入命令 nginx -s stop</p>
-
-<h4 id="8127001cmcjdcomcmcsoajdcom">8 配置 127.0.0.1 cmc.jd.com cmcsoa.jd.com</h4>
-
-<p>浏览器访问页面： http://cmc.jd.com/</p>
-
-<h4 id="9ideanode_modules">9 在IDEA中一般不点击node_modules文件夹，加载很慢</h4>
-
-<h4 id="10">10 测试数据库</h4>
-
-<p>ip: 192.168.155.75
- 数据库： coupon<em>marketing</em>center</p>
-
-<h4 id="11idea1502">11 使用idea版本：15.0.2</h4>
-
-<p>第一次安装使用的注册码服务器地址： http://idea.lanyus.com</p>
-
-<h4 id="12echartsforreactcopycmcwebnode_modules">12 需要手动将echarts-for-react这个文件夹copy到项目的cmc-web/node_modules文件夹中</h4>
-
-<h4 id="13babelpolyfillcopycmcwebnode_modules">13 需要手动将babel-polyfill这个文件夹copy到项目的cmc-web/node_modules文件夹中</h4>
-
-<h4 id="1419216815582">14 部署测试环境：192.168.155.82</h4>
-
-<p>有2个目录：cmc.soa.web.jd.local
- cmc.web.dist
- 都部署后，启动项目 </p>
-
-<p>2、WEB前端</p>
-
-<h1 id="reactreduxboilerplate">react-redux-boilerplate</h1>
-
-<p>A boilerplate with react, redux, redux-saga, react-router, webpack, babel, css-modules ...</p>
-
-<h2 id="">环境准备</h2>
-
-<p>先安装依赖</p>
-
-<pre><code class="bash">$ npm install
-</code></pre>
-
-<p>想要更好的开发体验，还需安装两个 Chrome 插件：<a href="https://chrome.google.com/webstore/detail/lmhkpmbekcpmknklioeibfkpmmfibljd">Redux DevTools</a> 和 <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">LiveReload</a> 。</p>
-
-<h2 id="">启动调试</h2>
-
-<pre><code class="bash">$ npm start
-$ open http://localhost:8989/
-</code></pre>
-
-<h2 id="">构建代码</h2>
-
-<pre><code class="bash">$ npm run build
-
-// 构建但不压缩
-$ npm run build -- --no-compress
-</code></pre>
-
-<h2 id="">目录结构</h2>
-
-<pre><code>.
-├── /dist/ # 构建输出的文件会在这里
-├── /node_modules/ # 第三方类库和工具
-├── /src/ # 应用源码
-│ ├── /components/ # React components
-│ ├── /entries/ # 应用入口
-│ ├── /layouts/ # 布局信息
-│ ├── /reducers/ # reducers
-│ ├── /routes/ # 路由信息
-│ ├── /sagas/ # redux-sagas
-│ └── /services/ # 处理和服务器的交互
-├── proxy.config.js # 配置 dora-plugin-proxy，用于 mock 和在线调试
-├── webpack.config.js # 扩展 webpack 配置
-└── package.json # 配置入口文件、依赖和 scripts
-</code></pre>
-
-<h2 id="">系统组织</h2>
-
-<p><img src="https://camo.githubusercontent.com/068c4ff126977b861cff3338428bdde6927f7dad/68747470733a2f2f6f732e616c697061796f626a656374732e636f6d2f726d73706f7274616c2f43684d775a42755a6c614c725377652e706e67" alt="" title=""></p>
-
-<p>详见：<a href="https://github.com/sorrycc/blog/issues/1">React + Redux 最佳实践</a></p>
-
-<h2 id="">内置类库</h2>
-
-<ul>
-<li><a href="https://github.com/facebook/react">react</a></li>
-<li><a href="https://github.com/reactjs/redux">redux</a></li>
-<li><a href="https://github.com/yelouafi/redux-saga">redux-saga</a></li>
-<li><a href="https://github.com/acdlite/redux-actions">redux-actions</a></li>
-<li><a href="https://github.com/reactjs/react-router">react-router</a></li>
-<li><a href="https://github.com/JedWatson/classnames">classnames</a></li>
-<li><a href="https://github.com/matthew-andrews/isomorphic-fetch">isomorphic-fetch</a></li>
-<li><a href="https://github.com/reactjs/react-router">react-router</a></li>
-<li><a href="https://github.com/reactjs/react-router-redux">react-router-redux</a></li>
-</ul>
-
-<h2 id="">工具特性</h2>
-
-<p>热替换和 LiveReload</p>
-
-<blockquote>
-  <p>基于 <a href="https://webpack.github.io/docs/hot-module-replacement-with-webpack.html">Webpack Vanilla HMR</a>，支持 <code>components</code>, <code>reducers</code>, <code>routers</code>, <code>sagas</code>, <code>layouts</code> 目录的模块热替换，其余目录的修改则会自动刷新页面。</p>
-  
-  <p>CSS 的自动刷新需通过 <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">LiveReload</a> Chrome 插件配合使用。</p>
-  
-  <ul>
-  <li><a href="https://github.com/reactjs/redux/pull/1455">Why Vanilla HMR</a></li>
-  </ul>
-</blockquote>
-
-<p>支持 css-modules</p>
-
-<blockquote>
-  <p>所有 less 文件会被解析为 css-modules</p>
-</blockquote>
-
-<p>运行错误和语法错误的提醒</p>
-
-<blockquote>
-  <p>通过 <a href="https://github.com/KeywordBrain/redbox-react">redbox-react</a> 和 webpack hmr overlay 提示运行错误和语法错误</p>
-</blockquote>
-
-<p>自动引入 <code>reducer</code> 和 <code>saga</code></p>
-
-<blockquote>
-  <p>通过 webpack 的 <code>require.context</code> 黑魔法批量引入 <code>reducer</code> 和 <code>saga</code>，新增、删除和重命名时会更方便</p>
-</blockquote>
-
-<p>自动安装 npm 依赖</p>
-
-<blockquote>
-  <p><img src="https://camo.githubusercontent.com/898e02d6539900efe65fadbfd15e2a1d7ce4dccf/68747470733a2f2f6f732e616c697061796f626a656374732e636f6d2f726d73706f7274616c2f4b6541474f776a70746a6152684d6d2e676966" alt="" title=""></p>
-</blockquote>
-
-<p>数据 mock 和线上调试</p>
-
-<blockquote>
-  <p>通过 dora-plugin-proxy 实现，详见：https://github.com/dora-js/dora-plugin-proxy#规则定义</p>
-</blockquote>
-
-<p>...</p>
-
-<h2 id="license">License</h2>
-
-<p>MIT</p>
 <!-- content end -->
 </div>
 <br>
@@ -404,23 +222,17 @@ $(document).ready(function() {
         dataType: "json",
         success: function(data) {
             $("#title").html(data.name);
-            var pages = [];
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
             //path
             var path = "cmc-global.html";
             //path end
             var now = 0;
-            for (var i = 0; i < data.pages.length; ++i)
-                if (path == data.pages[i].path) {
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
                     now = i;
-                    pages.push({"select": true, "path": data.pages[i].path, "title": data.pages[i].title});
-                }
-                else {
-                    pages.push({"select": false, "path": data.pages[i].path, "title": data.pages[i].title});
-                }
-            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
-            var pagesHtml = pagesTemplate.render({"pages": pages});
-            $("#pages").append(pagesHtml);
-            var post = data.pages[now];
+            var post = data.posts[now];
             var tmp = post.tags.split(" ");
             var tags = [];
             for (var i = 0; i < tmp.length; ++i)
